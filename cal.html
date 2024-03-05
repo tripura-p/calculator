@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+  </head>
+
+  <body>
+
+    <form name="calculator" class="calculator">
+
+        <table>
+            <tr>
+                <td>
+                    <input type="text" id="result" name="result">
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <input type="button" value="C" id="clear" name="clear" onclick="clr()">
+                    <input type="button" value="()" id="brackets" name="brackets" onclick="dis()">
+                    <input type="button" value="%" id="percentage" name="percentage" onclick="dis('%')">
+                    <input type="button" value="/" id="division" name="division" onclick="dis('/')">
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <input type="button" value="7" id="seven" name="seven" onclick="dis('7')">
+                    <input type="button" value="8" id="eightnine" name="eightnine" onclick="dis('8')">
+                    <input type="button" value="9" id="nine" name="nine" onclick="dis('9')">
+                    <input type="button" value="*" id="multi" name="multi" onclick="dis('*')">
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <input type="button" value="4" id="four" name="four" onclick="dis('4')">
+                    <input type="button" value="5" id="five" name="five" onclick="dis('5')">
+                    <input type="button" value="6" id="six" name="six" onclick="dis('6')">
+                    <input type="button" value="-" id="minus" name="minus" onclick="dis('-')">
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <input type="button" value="1" id="one" name="one" onclick="dis('1')">
+                    <input type="button" value="2" id="two" name="two" onclick="dis('2')">
+                    <input type="button" value="3" id="three" name="three" onclick="dis('3')">
+                    <input type="button" value="+" id="plus" name="plus" onclick="dis('+')">
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <input type="button" value="00" id="dblzero" name="dblzero" onclick="dis('00')">
+                    <input type="button" value="0" id="zero" name="zero" onclick="dis('0')">
+                    <input type="button" value="." id="dot" name="dot" onclick="dis('.')">
+                    <input type="button" value="=" id="equalto" name="equalto" onclick="solve()">
+                    
+                </td>
+            </tr>        
+        </table>        
+    </form>
+
+<script>
+    function dis(val){
+        var v=document.getElementById('result');
+        v.value += val;
+    }
+
+    function solve(){
+        var num1 = document.getElementById('result').value;
+        var num2 = eval(num1);
+        document.getElementById('result').value = num2;
+
+    }
+
+    function clr(){
+        var cl = document.getElementById('result');
+        cl.value = '';
+    }
+
+
+</script>
+
+  </body>
+</html>
+
